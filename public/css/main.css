@@ -1,0 +1,23 @@
+.pagination ul {
+    list-style-type: none;
+    margin: 0 auto;
+}
+
+.pagination ul li {
+    display: inline-block;
+    color: #1f2937;
+}
+
+.pagination ul li a {
+    text-decoration: none;
+}
+
+.pagination ul .prev-btn, .pagination ul .next-btn {
+    background: #1f2937;
+    padding: 0.25em;
+    border-radius: 5px;
+}
+
+.pagination ul .prev-btn a, .pagination ul .next-btn a {
+    color: white !important;
+}
