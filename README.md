@@ -15,7 +15,7 @@
 
 ## Getting started
 
-Rename the .env.example file to .env
+Rename the **.env.example** file to **.env**
 
 ```
 composer update
