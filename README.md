@@ -15,6 +15,8 @@
 
 ## Getting started
 
+Rename the .env.example file to .env
+
 ```
 composer update
 php artisan migrate --seed
