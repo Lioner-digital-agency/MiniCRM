@@ -44,13 +44,15 @@ class CompaniesController extends Controller
     {
         $validatedData = $request->validated();
 
-        $logoPath = $validatedData['logo']->hashName();
+        if (isset($validatedData['logo'])) {
+            $logoPath = $validatedData['logo']->hashName();
 
-        $validatedData['logo']->move(public_path('images'), $logoPath);
+            $validatedData['logo']->move(public_path('images'), $logoPath);
 
-        $validatedData['logo_path'] = 'images/' . $logoPath;
+            $validatedData['logo_path'] = 'images/' . $logoPath;
 
-        unset($validatedData['logo']);
+            unset($validatedData['logo']);
+        }
 
         $company = Company::create($validatedData);
 

@@ -43,7 +43,7 @@
                                                 href="mailto:{{ $employee->email }}">{{ $employee->email }}</a></td>
                                         <td class="align-middle"><a
                                                 href="tel:{{ $employee->phone }}">{{ $employee->phone }}</a></td>
-                                        <td class="align-middle">{{ $employee->company->name }}</td>
+                                        <td class="align-middle">{{ $employee->company->name ?? '' }}</td>
                                         <td class="align-middle">
                                             <a href="{{ route('employees.edit', ['employee' => $employee->id]) }}"
                                                class="btn d-inline-block btn-primary">{{ __('Edit') }}</a>
