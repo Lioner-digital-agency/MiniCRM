@@ -102,20 +102,24 @@ class CompaniesController extends Controller
      */
     public function update(StoreCompanyRequest $request, $id)
     {
-        $validatedData = $request->validated();
-
-        if (isset($validatedData['logo'])) {
-            $logoPath = $validatedData['logo']->hashName();
-
-            $validatedData['logo']->move(public_path('images'), $logoPath);
-            $validatedData['logo_path'] = 'images/' . $logoPath;
-        }
-
-        unset($validatedData['logo']);
-
-        $company = Company::where('id', $id)->update($validatedData);
-
+        $company = Company::find($id);
         if ($company) {
+            $validatedData = $request->validated();
+
+            if (isset($validatedData['logo'])) {
+                $logoPath = $validatedData['logo']->hashName();
+
+                $validatedData['logo']->move(public_path('images'), $logoPath);
+                $validatedData['logo_path'] = 'images/' . $logoPath;
+
+                if (File::exists($company->logo_path)) {
+                    File::delete($company->logo_path);
+                }
+            }
+
+            unset($validatedData['logo']);
+            $company->update($validatedData);
+
             return Redirect::route('companies.index')->with('success', __('Company modification saved successfully!'));
         }
 
