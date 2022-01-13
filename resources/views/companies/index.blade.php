@@ -38,14 +38,25 @@
                                 </tr>
                                 @foreach($companies as $company)
                                     <tr>
-                                        <td class="align-middle">{{ $company->name }}</td>
-                                        <td class="align-middle"><a
-                                                href="mailto:{{ $company->email }}">{{ $company->email }}</a></td>
-                                        <td class="align-middle"><img src="{{ asset($company->logo_path) }}"
-                                                                      alt="{{ $company->name }}" class="mx-auto"
-                                                                      style="height:50px;width: auto;"></td>
-                                        <td class="align-middle"><a href="{{ $company->website }}"
-                                                                    target="_blank">{{ $company->website }}</a></td>
+                                        <td class="align-middle">
+                                            {{ $company->name }}
+                                        </td>
+                                        <td class="align-middle">
+                                            <a href="mailto:{{ $company->email }}">
+                                                {{ $company->email }}
+                                            </a>
+                                        </td>
+                                        <td class="align-middle">
+                                            @if($company->logo_path)
+                                                <img src="{{ asset($company->logo_path) }}" alt="{{ $company->name }}"
+                                                     class="mx-auto" style="height:50px;width: auto;">
+                                            @endif
+                                        </td>
+                                        <td class="align-middle">
+                                            <a href="{{ $company->website }}" target="_blank">
+                                                {{ $company->website }}
+                                            </a>
+                                        </td>
                                         <td class="align-middle">
                                             <a href="{{ route('companies.edit', ['company' => $company->id]) }}"
                                                class="btn d-inline-block btn-primary">{{ __('Edit') }}</a>
