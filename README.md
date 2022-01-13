@@ -16,7 +16,7 @@
 ## Getting started
 
 ```
-composer install
+composer update
 php artisan migrate --seed
 php artisan serve
 ```
