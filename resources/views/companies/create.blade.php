@@ -16,21 +16,21 @@
                         @endif
                         <div class="mb-3 col-md-6">
                             <label for="name" class="form-label">{{ __('Name') }}</label>
-                            <input type="text" class="form-control" id="name" name="name" value="{{ (isset($company) ? $company->name : old('name')) }}">
+                            <input type="text" placeholder="Lioner Digitális Ügynökség Bt." class="form-control" id="name" name="name" value="{{ (isset($company) ? $company->name : old('name')) }}">
                             @error('name')
                                 <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="email" class="form-label">{{ __('Email address') }}</label>
-                            <input type="email" class="form-control" id="email" name="email" value="{{ (isset($company) ? $company->email : old('email')) }}">
+                            <input type="email" placeholder="info@lioner.hu" class="form-control" id="email" name="email" value="{{ (isset($company) ? $company->email : old('email')) }}">
                             @error('email')
                                 <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="website" class="form-label">{{ __('Website') }}</label>
-                            <input type="text" class="form-control" id="website" name="website" value="{{ (isset($company) ? $company->website : old('website')) }}">
+                            <input type="text" placeholder="https://lioner.hu/" class="form-control" id="website" name="website" value="{{ (isset($company) ? $company->website : old('website')) }}">
                             @error('website')
                                 <small class="form-text text-danger">{{ $message }}</small>
                             @enderror

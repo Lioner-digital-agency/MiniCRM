@@ -16,28 +16,28 @@
                         @endif
                         <div class="mb-3 col-md-6">
                             <label for="first_name" class="form-label">{{ __('First Name') }}</label>
-                            <input type="text" class="form-control" id="first_name" name="first_name" value="{{ (isset($employee) ? $employee->first_name : old('first_name')) }}">
+                            <input type="text" placeholder="Teszt" class="form-control" id="first_name" name="first_name" value="{{ (isset($employee) ? $employee->first_name : old('first_name')) }}">
                             @error('first_name')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="last_name" class="form-label">{{ __('Last Name') }}</label>
-                            <input type="text" class="form-control" id="last_name" name="last_name" value="{{ (isset($employee) ? $employee->last_name : old('last_name')) }}">
+                            <input type="text" placeholder="Jakab" class="form-control" id="last_name" name="last_name" value="{{ (isset($employee) ? $employee->last_name : old('last_name')) }}">
                             @error('last_name')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="email" class="form-label">{{ __('Email address') }}</label>
-                            <input type="email" class="form-control" id="email" name="email" value="{{ (isset($employee) ? $employee->email : old('email')) }}">
+                            <input type="email" placeholder="jakab.teszt@lioner.hu" class="form-control" id="email" name="email" value="{{ (isset($employee) ? $employee->email : old('email')) }}">
                             @error('email')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="phone" class="form-label">{{ __('Phone') }}</label>
-                            <input type="text" class="form-control" id="phone" name="phone" value="{{ (isset($employee) ? $employee->phone : old('phone')) }}">
+                            <input type="text" placeholder="36308888888" class="form-control" id="phone" name="phone" value="{{ (isset($employee) ? $employee->phone : old('phone')) }}">
                             @error('phone')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
